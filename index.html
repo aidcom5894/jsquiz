@@ -1,0 +1,144 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Quiz</title>
+
+<!-- fonts -->
+<link rel="stylesheet" href="assets/fonts/font.css">
+
+<!-- fontawesome 5 -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css" />
+<!-- bootstrap 5 -->
+<link rel="stylesheet" href="assets/css/Bootstrap/bootstrap.min.css">
+
+<!-- Custom Css Files -->
+<link rel="stylesheet" href="assets/css/style.css">
+<link rel="stylesheet" href="assets/css/responsive.css">
+<link rel="stylesheet" href="assets/css/animation.css">
+
+<!--Result Css-->
+<link rel="stylesheet" href="assets/css/result_style.css">
+
+</head>
+<body onload="generateQNS1()">
+
+<main class="overflow-hidden">
+
+<!-- step-number -->
+<div class="step-number">
+<div class="step-number-inner">
+Question <span id="activeStep">1</span>/5
+</div>
+</div>
+
+<div class="container">
+<div class="row">
+<div class="tab-100 order-c col-md-5 p-relative">
+
+    <!-- side image -->
+    <div class="side-img">
+        <img src="assets/images/side.png" alt="side-img">
+    </div>
+
+    <!-- bar -->
+    <div class="step-bar">
+        <div class="bar">
+            <div class="w-100 fill"></div>
+        </div>
+        <div class="bar">
+            <div class="fill"></div>
+        </div>
+        <div class="bar">
+            <div class="fill"></div>
+        </div>
+        <div class="bar">
+            <div class="fill"></div>
+        </div>
+        <div class="bar">
+            <div class="fill"></div>
+        </div>
+    </div>
+</div>
+<div class="tab-100 col-md-7">
+    <div class="show-section wrapper">
+
+        <!-- step 1 -->
+        <section class="steps">
+
+            <!-- form -->
+            <form id="step1" method="post" novalidate>
+
+                <!-- generate question -->
+                <h2 class="q-heading" id="question1txt"></h2>
+
+                <!-- form field -->
+                <div class="form-inner">
+                   
+                </div>
+
+                <!-- next previous button -->
+                <div class="next-prev">
+                    <button type="button" class="next" id="step1btn">
+                        next question<i class="fa-solid fa-arrow-right"></i>
+                    </button>
+                </div>
+            </form>
+        </section>
+
+       
+
+<!-- bootstrap 5 -->
+<script src="assets/js/Bootstrap/bootstrap.min.js"></script>
+
+<!-- jQuery -->
+<script src="assets/js/jQuery/jquery-3.6.3.min.js"></script>
+
+<!-- Result JS -->
+<script src="assets/js/result.js"></script>
+
+<!-- Custom js -->
+<script src="assets/js/custom.js"></script>
+
+</body>
+</html>
+
+<!-- script to disable ctrl+R function on the webpage -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+<script type="text/javascript">
+$(document).ready(function () {
+    $(document).on("keydown", function(e) {
+        e = e || window.event;
+        if (e.ctrlKey) {
+            var c = e.which || e.keyCode;
+            if (c == 82) {
+                e.preventDefault();
+                e.stopPropagation();
+            }
+        }
+    });
+});
+</script>
+
+
+<script type="text/javascript">
+    var question1 = ["q1", "q2", "q3", "q4", "q5", "q6"];
+    var qns1Section = document.getElementById('question1txt');
+
+    var option1 = ["a1","a2","a3","a4"];
+    var option2 = ["b1","b2","b3","b4"];
+    var option3 = ["c1","c2","c3","c4"];
+    var option4 = ["d1","d2","d3","d4"];
+    var option5 = ["e1","e2","e3","e4"];
+    var option6 = ["f1","f2","f3","f4"];
+
+
+    function generateQNS1()
+    {
+       qns1Section.innerHTML = question1[Math.floor(Math.random() * question1.length)];
+    }
+
+</script>
