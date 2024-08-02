@@ -24,7 +24,7 @@
 <link rel="stylesheet" href="assets/css/result_style.css">
 
 </head>
-<body onload="generateQNS1()">
+<body onload="generateQns()">
 
 <main class="overflow-hidden">
 
@@ -77,7 +77,41 @@ Question <span id="activeStep">1</span>/5
 
                 <!-- form field -->
                 <div class="form-inner">
-                   
+                    <script type="text/javascript">
+                     let countries = ["America", "Australia", "Hong Kong", "Russia"];
+
+                        for (let i = 0; i < countries.length; i++) {
+                          let delay = `delay-${(i + 1) * 100}`;
+                          let html = `
+                            <div class="${delay} bounce-left radio-field">
+                              <input class="checkmark" type="radio" name="op1" value="${countries[i]}">
+                              <label>${countries[i]}</label>
+                            </div>
+                          `;
+                          document.write(html);
+                        }
+                    </script>
+<!-- 
+                    <div class="delay-100 bounce-left radio-field">
+                        <input class="checkmark" type="radio" name="op1" value="America">
+                        <label>America</label>
+                    </div>
+
+                    <div class="delay-200 bounce-left radio-field">
+                        <input class="checkmark" type="radio" name="op1" value="Australia">
+                        <label>Australia</label>
+                    </div>
+
+                    <div class="delay-300 bounce-left radio-field">
+                        <input class="checkmark" type="radio" name="op1" value="Hong Kong">
+                        <label>Hong Kong</label>
+                    </div>
+
+
+                    <div class=" delay-400 bounce-left radio-field">
+                        <input class="checkmark" type="radio" name="op1" value="Russia">
+                        <label>Russia</label>
+                    </div> -->
                 </div>
 
                 <!-- next previous button -->
@@ -106,39 +140,13 @@ Question <span id="activeStep">1</span>/5
 </body>
 </html>
 
-<!-- script to disable ctrl+R function on the webpage -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
-<script type="text/javascript">
-$(document).ready(function () {
-    $(document).on("keydown", function(e) {
-        e = e || window.event;
-        if (e.ctrlKey) {
-            var c = e.which || e.keyCode;
-            if (c == 82) {
-                e.preventDefault();
-                e.stopPropagation();
-            }
-        }
-    });
-});
-</script>
-
 
 <script type="text/javascript">
-    var question1 = ["q1", "q2", "q3", "q4", "q5", "q6"];
-    var qns1Section = document.getElementById('question1txt');
+function generateQns() 
+{
+    var questions = ["q1","q2","q3","q4","q5","q6"];
+    var questionTxt = document.getElementById('question1txt');
 
-    var option1 = ["a1","a2","a3","a4"];
-    var option2 = ["b1","b2","b3","b4"];
-    var option3 = ["c1","c2","c3","c4"];
-    var option4 = ["d1","d2","d3","d4"];
-    var option5 = ["e1","e2","e3","e4"];
-    var option6 = ["f1","f2","f3","f4"];
-
-
-    function generateQNS1()
-    {
-       qns1Section.innerHTML = question1[Math.floor(Math.random() * question1.length)];
-    }
-
+    questionTxt.innerHTML = questions[Math.floor(Math.random()*questions.length)];
+}
 </script>
