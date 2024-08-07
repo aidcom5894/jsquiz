@@ -78,7 +78,15 @@ Question <span id="activeStep">1</span>/5
                 <!-- form field -->
                 <div class="form-inner">
                     <script type="text/javascript">
-                     let countries = ["America", "Australia", "Hong Kong", "Russia"];
+                  let countriesSets = [
+                      ["abc", "Australia", "Hong Kong", "Russia"],
+                      ["America2", "Australia2", "abc", "Russia2"],
+                      ["America3", "abc", "Hong Kong3", "Russia3"],
+                      ["America4", "Australia4", "Hong Kong4", "abc"]
+                    ];
+
+                        // Randomly select one of the countries sets
+                        let countries = countriesSets[Math.floor(Math.random() * countriesSets.length)];
 
                         for (let i = 0; i < countries.length; i++) {
                           let delay = `delay-${(i + 1) * 100}`;
