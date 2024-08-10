@@ -72,18 +72,38 @@ Question <span id="activeStep">1</span>/5
             <!-- form -->
             <form id="step1" method="post" novalidate>
 
-                <!-- generate question -->
-                <h2 class="q-heading" id="question1txt"></h2>
+            <h2 class="q-heading" id="question1"></h2>
+                
+
+            <script type="text/javascript">
+                let questionBank1 = ["City you were Born?","Capital of India?","Capital of Bihar?","What is AIDCOM?"];
+
+                var showQns = document.getElementById('question1');
+
+                var generatedQuestion = questionBank1[Math.floor(Math.random()*questionBank1.length)];
+
+                function generateQns()
+                {
+                    showQns.innerHTML = generatedQuestion;
+                }
+            </script>
+
+                
+                           
 
                 <!-- form field -->
                 <div class="form-inner">
                     <script type="text/javascript">
+                     
                   let countriesSets = [
-                      ["abc", "Australia", "Hong Kong", "Russia"],
-                      ["America2", "Australia2", "abc", "Russia2"],
-                      ["America3", "abc", "Hong Kong3", "Russia3"],
-                      ["America4", "Australia4", "Hong Kong4", "abc"]
+                      ["Delhi", "Patna", "Bettiah", "IT Company"],
+                      ["IT Company", "Delhi", "Patna", "Bettiah"],
+                      ["Bettiah", "Patna", "Delhi", "IT Company"],
+                      ["Delhi", "Patna", "Bettiah", "IT Company"],                    
+                                 
                     ];
+
+                  let length = 4;
 
                         // Randomly select one of the countries sets
                         let countries = countriesSets[Math.floor(Math.random() * countriesSets.length)];
@@ -99,27 +119,12 @@ Question <span id="activeStep">1</span>/5
                           document.write(html);
                         }
                     </script>
-<!-- 
-                    <div class="delay-100 bounce-left radio-field">
-                        <input class="checkmark" type="radio" name="op1" value="America">
-                        <label>America</label>
-                    </div>
-
-                    <div class="delay-200 bounce-left radio-field">
-                        <input class="checkmark" type="radio" name="op1" value="Australia">
-                        <label>Australia</label>
-                    </div>
-
-                    <div class="delay-300 bounce-left radio-field">
-                        <input class="checkmark" type="radio" name="op1" value="Hong Kong">
-                        <label>Hong Kong</label>
-                    </div>
 
 
-                    <div class=" delay-400 bounce-left radio-field">
-                        <input class="checkmark" type="radio" name="op1" value="Russia">
-                        <label>Russia</label>
-                    </div> -->
+
+
+                   
+
                 </div>
 
                 <!-- next previous button -->
@@ -148,13 +153,3 @@ Question <span id="activeStep">1</span>/5
 </body>
 </html>
 
-
-<script type="text/javascript">
-function generateQns() 
-{
-    var questions = ["q1","q2","q3","q4","q5","q6"];
-    var questionTxt = document.getElementById('question1txt');
-
-    questionTxt.innerHTML = questions[Math.floor(Math.random()*questions.length)];
-}
-</script>
